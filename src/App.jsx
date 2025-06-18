@@ -5,35 +5,55 @@ import About from './components/About'
 import Dashboard from './components/Dashboard'
 import Navbar from './components/Navbar'
 import Notfound from './components/Notfound'
+import Course from './components/Course'
+import Contact from './components/Contact'
+import Services from './components/Services'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: 
-    <div>
-      <Navbar></Navbar>
-      <Home></Home>
-    </div>
+    element:
+      <div>
+        <Navbar></Navbar>
+        <Home></Home>
+      </div>,
+    children:
+      [{
+        path: 'contact',
+        element: <Contact></Contact>
+      }]
   },
   {
     path: '/about',
-    element: 
-    <div>
+    element:
       <div>
-      <Navbar></Navbar>
-      <About></About>
-    </div>
-    </div>
+        <div>
+          <Navbar></Navbar>
+          <About></About>
+        </div>
+      </div>,
+    children:
+      [{
+        path: 'services',
+        element: <Services></Services>
+      }]
   },
   {
     path: '/dashboard',
-    element: 
-    <div>
-      <Navbar></Navbar>
-      <Dashboard></Dashboard>
-    </div>
+    element:
+      <div>
+        <Navbar></Navbar>
+        <Dashboard></Dashboard>
+      </div>,
+    children:
+      [
+        {
+          path: 'course',
+          element: <Course></Course>
+        }
+      ]
   },
   {
     path: '/navbar',
