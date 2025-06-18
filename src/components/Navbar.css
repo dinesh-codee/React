@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    padding: 0 50px;
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+.active-link{
+    color: darkred;
+    border-bottom: 3px solid rebeccapurple;
+}
